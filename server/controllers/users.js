@@ -69,7 +69,7 @@ function UsersController(){
 		for (var i = 0; i <= maxCounter; i++){
 			transaction += "(" + req.body.orginal_payer_id + ", " + req.body.ower_ids[i] + ", " + req.body.transaction + ", " + tempAmount + ", " + tempAmount + ", NOW(), NOW())";
 			if ( i < maxCounter){
-				transaction += ","
+				transaction += ",";
 			}
 		}
 		User.post_transactions(transaction, function(status) {
